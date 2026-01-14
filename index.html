@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HVAC Dudes | Zionsville, IN Heating & Cooling</title>
+  <meta name="description" content="HVAC Dudes in Zionsville, Indiana. Heating & cooling repair, installation, maintenance, and indoor air quality." />
+
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111b31; --text:#eaf0ff; --muted:#b9c5ff;
+      --accent:#4ea1ff; --accent2:#7cffc2; --line:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);background:
+      radial-gradient(900px 500px at 10% 0%, rgba(78,161,255,.25), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(124,255,194,.18), transparent 55%),
+      var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px}
+    header{
+      position:sticky;top:0;z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .brand small{display:block;font-weight:650;color:var(--muted)}
+    .logoBox{
+      width:44px;height:44px;border-radius:14px;
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      display:grid;place-items:center;
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+    .links a{opacity:.9}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:14px;border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color:var(--text);font-weight:700;
+    }
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--accent), #2c7bff);
+      box-shadow: 0 18px 45px rgba(78,161,255,.22);
+    }
+    .hero{padding:56px 0 24px}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch}
+    @media (max-width: 880px){.grid{grid-template-columns:1fr}.links{display:none}}
+    .card{
+      background: rgba(17,27,49,.75);
+      border:1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-card{padding:28px}
+    h1{margin:0 0 12px;font-size:44px;line-height:1.05}
+    @media (max-width: 520px){h1{font-size:36px}}
+    .sub{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 18px}
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 22px}
+    .pill{padding:9px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:650}
+    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+    .side{padding:22px;display:flex;flex-direction:column;gap:12px}
+    .side h3{margin:0;font-size:18px}
+    .side p{margin:0;color:var(--muted);line-height:1.5}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:auto}
+    .q{
+      padding:14px;border-radius:16px;border:1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+    .q strong{display:block;margin-bottom:4px}
+    section{padding:18px 0}
+    .section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:18px 0}
+    .section-title h2{margin:0;font-size:24px}
+    .section-title span{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width: 880px){.cards{grid-template-columns:1fr}}
+    .svc{padding:18px}
+    .svc h3{margin:0 0 8px}
+    .svc p{margin:0;color:var(--muted);line-height:1.55}
+    .badge{display:inline-block;margin-top:12px;font-weight:750;font-size:13px;
+      padding:7px 10px;border-radius:999px;background:rgba(78,161,255,.14);border:1px solid rgba(78,161,255,.28)
+    }
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 880px){.split{grid-template-columns:1fr}}
+    .content{padding:20px}
+    ul{margin:10px 0 0 18px;color:var(--muted);line-height:1.8}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width: 880px){.contact{grid-template-columns:1fr}}
+    form{padding:20px}
+    label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}
+    input, textarea, select{
+      width:100%;padding:12px 12px;border-radius:14px;
+      border:1px solid var(--line);background:rgba(0,0,0,.18);color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px;resize:vertical}
+    .formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width: 520px){.formrow{grid-template-columns:1fr}}
+    footer{padding:26px 0 44px;color:var(--muted);border-top:1px solid var(--line);margin-top:26px}
+    .small{font-size:13px;opacity:.95}
+    .callout{padding:16px;border-radius:16px;border:1px dashed rgba(124,255,194,.35);background:rgba(124,255,194,.06);color:var(--muted)}
+    .tiny{font-size:12px;color:var(--muted)}
+    .divider{height:1px;background:var(--line);margin:12px 0}
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logoBox" aria-hidden="true">
+          <!-- Simple HVAC Dudes Logo (SVG) -->
+          <svg width="30" height="30" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HVAC Dudes logo">
+            <defs>
+              <linearGradient id="g" x1="6" y1="6" x2="58" y2="58" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#4EA1FF"/>
+                <stop offset="1" stop-color="#7CFFC2"/>
+              </linearGradient>
+            </defs>
+            <!-- Snowflake -->
+            <path d="M32 8v48M16 16l32 32M48 16L16 48M12 32h40"
+              stroke="url(#g)" stroke-width="4" stroke-linecap="round"/>
+            <!-- Flame -->
+            <path d="M44 46c0 7-5.4 10-12 10s-12-3-12-10c0-5.5 4-8.2 7-11
+                     1.6 3.8 5.2 4.8 6.2 1.2 1.2-4.2-1.2-7.2-1.2-10.2
+                     5.8 4.2 12 9.3 12 20z"
+              fill="url(#g)" opacity=".9"/>
+          </svg>
+        </div>
+        <div>
+          HVAC Dudes
+          <small>Heating • Cooling • Air Quality</small>
+        </div>
+      </div>
+
+      <nav class="links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Replace the phone when you have it -->
+      <a class="btn primary" href="tel:+1XXXXXXXXXX">Call (Your Number)</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="grid">
+        <div class="card hero-card">
+          <h1>Zionsville’s heating & cooling crew — HVAC Dudes.</h1>
+          <p class="sub">
+            Fast service, honest pricing, and clean installs across <strong>Zionsville, Indiana</strong> and nearby areas.
+            Repairs, replacements, tune-ups, and indoor air quality — done right.
+          </p>
+
+          <div class="pillrow">
+            <div class="pill">✅ AC & Furnace Repair</div>
+            <div class="pill">✅ System Installations</div>
+            <div class="pill">✅ Maintenance & Tune-ups</div>
+            <div class="pill">✅ Indoor Air Quality</div>
+          </div>
+
+          <div class="cta">
+            <a class="btn primary" href="#contact">Request Service</a>
+            <a class="btn" href="tel:+1XXXXXXXXXX">Call Now</a>
+          </div>
+
+          <div style="height:14px"></div>
+          <div class="callout">
+            <strong style="color:var(--text)">Tip:</strong> Add a seasonal special here (ex: “$79 tune-up”) once you decide.
+          </div>
+        </div>
+
+        <aside class="card side">
+          <h3>Service Area</h3>
+          <p>Zionsville, IN + surrounding communities.</p>
+
+          <div class="divider"></div>
+
+          <h3>Hours</h3>
+          <p>Mon–Fri: 8am–6pm • Sat: 9am–2pm</p>
+          <p class="tiny">Emergency service: list if you offer it.</p>
+
+          <div class="divider"></div>
+
+          <h3>What we handle</h3>
+          <p>All the HVAC stuff: diagnostics, repairs, installs, air flow issues, and air quality add-ons.</p>
+
+          <div class="quick">
+            <div class="q"><strong>Up-front</strong><span class="small">Clear options</span></div>
+            <div class="q"><strong>Clean</strong><span class="small">Respect your home</span></div>
+            <div class="q"><strong>Skilled</strong><span class="small">Detail-focused</span></div>
+            <div class="q"><strong>Backed</strong><span class="small">Warranty-ready</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-title">
+        <h2>Services</h2>
+        <span>Residential • Light Commercial</span>
+      </div>
+
+      <div class="cards">
+        <div class="card svc">
+          <h3>Cooling</h3>
+          <p>AC repair, diagnostics, replacements, new installs, thermostat issues, airflow and comfort fixes.</p>
+          <span class="badge">A/C</span>
+        </div>
+
+        <div class="card svc">
+          <h3>Heating</h3>
+          <p>Furnace repair/replacement, heat pumps, ignition issues, blower problems, safety checks & upgrades.</p>
+          <span class="badge">Heat</span>
+        </div>
+
+        <div class="card svc">
+          <h3>Indoor Air & Efficiency</h3>
+          <p>Filters, UV, humidifiers/dehumidifiers, ductwork improvements, balancing, and system tune-ups.</p>
+          <span class="badge">Air Quality</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="split">
+        <div class="card content">
+          <h2 style="margin:0 0 10px">Why Zionsville calls HVAC Dudes</h2>
+          <p class="sub" style="margin:0">
+            We keep it simple: show up, explain what’s going on, and fix it the right way — without pressure.
+          </p>
+          <ul>
+            <li>Up-front pricing before work begins</li>
+            <li>Clear explanations + options that fit your budget</li>
+            <li>Clean work area and respectful service</li>
+            <li>Repair and install recommendations that make sense</li>
+          </ul>
+        </div>
+
+        <div class="card content" id="reviews">
+          <h2 style="margin:0 0 10px">Customer reviews</h2>
+          <p class="sub" style="margin:0 0 14px">Replace these with real reviews when you’re ready.</p>
+          <p style="margin:0 0 12px"><strong>★★★★★</strong> “Fast, honest, and didn’t try to upsell me.”</p>
+          <p style="margin:0 0 12px"><strong>★★★★★</strong> “Explained the issue clearly and fixed it same day.”</p>
+          <p style="margin:0"><strong>★★★★★</strong> “Install was clean and everything works perfectly.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Request Service</h2>
+        <span>We’ll get back to you ASAP</span>
+      </div>
+
+      <div class="contact">
+        <div class="card content">
+          <h3 style="margin:0 0 10px">Contact Info</h3>
+          <p class="sub" style="margin:0 0 14px">
+            <strong>HVAC Dudes</strong><br>
+            <strong>Location:</strong> Zionsville, Indiana<br>
+            <strong>Phone:</strong> <a href="tel:+1XXXXXXXXXX">(Your Number)</a><br>
+            <strong>Email:</strong> <a href="mailto:service@hvacdudes.com">service@hvacdudes.com</a>
+          </p>
+
+          <h3 style="margin:18px 0 10px">Emergency?</h3>
+          <p class="sub" style="margin:0 0 14px">
+            If you smell gas, leave the building and call your gas company first.
+          </p>
+
+          <a class="btn primary" href="tel:+1XXXXXXXXXX">Call HVAC Dudes</a>
+        </div>
+
+        <!-- Form option A: email service (easy) -->
+        <form class="card" action="https://formsubmit.co/your-email@example.com" method="POST">
+          <div style="padding:20px;border-bottom:1px solid var(--line)">
+            <h3 style="margin:0">Get a quote / schedule service</h3>
+            <p class="sub" style="margin:8px 0 0">Replace the email in the form action to receive messages.</p>
+          </div>
+
+          <div style="padding:20px">
+            <div class="formrow">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="(317) 555-1234" required />
+              </div>
+            </div>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" />
+
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option>AC Repair</option>
+              <option>Furnace Repair</option>
+              <option>Heat Pump</option>
+              <option>New System Install / Replacement</option>
+              <option>Maintenance / Tune-up</option>
+              <option>Indoor Air Quality</option>
+              <option>Thermostat / Controls</option>
+              <option>Ductwork / Airflow</option>
+              <option>Other</option>
+            </select>
+
+            <label for="message">Details</label>
+            <textarea id="message" name="message" placeholder="What’s going on? Any error codes, noises, or how long it’s been happening?"></textarea>
+
+            <div style="height:12px"></div>
+            <button class="btn primary" type="submit" style="width:100%;cursor:pointer">Send Request</button>
+
+            <input type="hidden" name="_subject" value="New HVAC Dudes Service Request" />
+            <input type="hidden" name="_captcha" value="false" />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding:0">
+        <div class="small">© <span id="year"></span> HVAC Dudes • Zionsville, Indiana</div>
+        <div class="small" style="margin-top:8px">Simple, fast website — ready for any hosting platform.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
